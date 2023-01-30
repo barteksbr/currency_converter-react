@@ -8,6 +8,8 @@ Here is simply Currency converter
 - ES6+ features
 ## Converter page:
 
+https://barteksbr.github.io/currency_converter-react/
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
