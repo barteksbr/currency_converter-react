@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Form } from './Form';
 import currencies from "./currencies";
+import { ActualDate } from "./Form/ActualDate";
 
 
 
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div >
+      <ActualDate />
       <Form
         result={result}
         calculateResult={calculateResult}
