@@ -1,7 +1,7 @@
 import { useState } from "react";
 import currencies from "../currencies"
 import { Result } from "./Result";
-import "./style.css"; 
+import { Wrapper, StyledFieldset, StyledInput, Select, Button, StyledResult } from "./styled";
 
 
 
@@ -16,23 +16,22 @@ export const Form = ({ calculateResult, result }) => {
 
 
 return (
-    <form className="form" onSubmit={onSubmit}>
-        <fieldset className="form__fieldset">
+    <Wrapper onSubmit={onSubmit}>
+        <StyledFieldset>
             <legend><strong>Kantor</strong></legend>
             <label>
                 Ilość PLN:
-                <input value={amount}
+                <StyledInput value={amount}
                     type="number"
                     onChange={({ target }) => setAmount(target.value)}
                     step="0.01" min="1"
-                    required
-                    className="form__input"
+                    required                    
                 />
             </label>
             <p>
                 <label>
                     Wybierz walutę:
-                    <select className="form__select"
+                    <Select
                         value={currency}
                         onChange={({ target }) => setCurrency(target.value)}
                     >
@@ -44,17 +43,17 @@ return (
                                 {currency.fullName}
                             </option>
                         )))}
-                    </select>
+                    </Select>
                 </label>
             </p>
-        </fieldset>
+        </StyledFieldset>
         <p>
-            <button className="form__button">Przelicz!</button>
+            <Button>Przelicz!</Button>
         </p>
-        <p class="form__result">Po przeliczeniu otrzymamy: 
+        <StyledResult>Po przeliczeniu otrzymamy: 
         <Result result={result} />
-        </p>
-    </form>
+        </StyledResult>
+    </Wrapper>
 );
 
 };

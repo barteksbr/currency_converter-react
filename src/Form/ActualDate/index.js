@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from "react";
-import "./style.css";
+import { Wrapper } from "./styled";
 
 export const ActualDate = () => {
     const [date, setDate] = useState(new Date());
@@ -16,7 +15,7 @@ export const ActualDate = () => {
     }, []);
 
     return (
-        <div className="date">
+        <Wrapper>
             Dzisiaj jest
             {" "}
             {date.toLocaleString(
@@ -28,6 +27,6 @@ export const ActualDate = () => {
                 day: "numeric",
                 month: "long"
             })}
-        </div>
+        </Wrapper>
     )
 };

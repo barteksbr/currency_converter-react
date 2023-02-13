@@ -1,7 +1,7 @@
 
 
 export const Result = ({ result }) => (
-    <p className="result">
+    <p>
         {result !== undefined && (
             <>
                 <strong>
