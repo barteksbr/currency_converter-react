@@ -1,18 +1,11 @@
-import { useEffect, useState } from "react";
 import { Wrapper } from "./styled";
+import { useCurrentDate } from "./useCurrentDate";
+
 
 export const ActualDate = () => {
-    const [date, setDate] = useState(new Date());
+    const date = useCurrentDate();
+    
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, []);
 
     return (
         <Wrapper>
